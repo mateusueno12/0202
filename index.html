@@ -3,54 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu com Efeito Hover</title>
+    <title>Menu com Efeito Hover - JavaScript</title>
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Menu Interativo</h1>
+        <h1>Menu Interativo <span id="animatedText">✨</span></h1>
+        
+        <!-- Indicador de item ativo -->
+        <div class="active-indicator" id="activeIndicator">
+            Item selecionado: <span id="activeItem">Nenhum</span>
+        </div>
+        
         <div class="menu-container">
-            <ul class="menu">
-                <li class="menu-item">
-                    <a href="#" class="menu-link">
+            <ul class="menu" id="menuList">
+                <li class="menu-item" data-item="inicio">
+                    <a href="#" class="menu-link" data-page="home">
                         <i class="fas fa-home"></i>
-                        Início
+                        <span class="link-text">Início</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="#" class="menu-link">
+                <li class="menu-item" data-item="sobre">
+                    <a href="#" class="menu-link" data-page="about">
                         <i class="fas fa-info-circle"></i>
-                        Sobre
+                        <span class="link-text">Sobre</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="#" class="menu-link">
+                <li class="menu-item" data-item="servicos">
+                    <a href="#" class="menu-link" data-page="services">
                         <i class="fas fa-cogs"></i>
-                        Serviços
+                        <span class="link-text">Serviços</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="#" class="menu-link">
+                <li class="menu-item" data-item="contato">
+                    <a href="#" class="menu-link" data-page="contact">
                         <i class="fas fa-envelope"></i>
-                        Contato
+                        <span class="link-text">Contato</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="#" class="menu-link">
+                <li class="menu-item" data-item="blog">
+                    <a href="#" class="menu-link" data-page="blog">
                         <i class="fas fa-blog"></i>
-                        Blog
+                        <span class="link-text">Blog</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="#" class="menu-link">
+                <li class="menu-item" data-item="perfil">
+                    <a href="#" class="menu-link" data-page="profile">
                         <i class="fas fa-user"></i>
-                        Perfil
+                        <span class="link-text">Perfil</span>
                     </a>
                 </li>
             </ul>
         </div>
+        
+        <!-- Área de conteúdo dinâmico -->
+        <div class="content-area" id="contentArea">
+            <div class="content-card">
+                <h2 id="contentTitle">Bem-vindo! 👋</h2>
+                <p id="contentText">Passe o mouse sobre os itens do menu e clique para ver os efeitos JavaScript em ação!</p>
+                <div class="content-stats" id="contentStats">
+                    <div class="stat">
+                        <span class="stat-value" id="clickCount">0</span>
+                        <span class="stat-label">Cliques</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="hoverCount">0</span>
+                        <span class="stat-label">Hovers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
